@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Struttura delle altre pagine*/
+        body{
+            background-color: var(--site-header-bg, #27282c);
+        }
+        .contenitorePrincipale{
+            display: flex;
+            width: 100%;
+            height: 20vh;
+            border: 1px none;
+            align-items: center;
+            justify-content: center;
+        }
+        .contenitorePrincipale > div{
+            display: flex;
+            width: 80%;
+            height: 80%;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 5%;
+            border: 1px none;
+        }
+        .contenitorePrincipale > div > div{
+            display: flex;
+            border: 1px none;
+            width: 40%;
+            height: 10%;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 0%;
+            margin-left: 70%;
+            position: absolute;
+            left: -50px;
+            opacity: 0;
+            animation: appearFromLeft 4s forwards;
+            animation: fadeIn 5s inherit;
+        }
+        .navbar > div > button{
+            width: max-content;
+            height: 50%;
+            align-self: center;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar > div > button > a:hover{
+            /*aggiungere animazione che si alza di poco*/
+            animation: blinkWhite 1.5s infinite;
+            filter: brightness(110%);
+            transform: translateY(-6px);
+        }
+        .contenitore > div:hover .shadow {
+            transform: translateY(4px);
+            transition: transform
+                250ms
+                cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        @keyframes blinkWhite {
+            0% {
+                color: white; /* Colore di sfondo iniziale */
+            }
+            50% {
+                color: transparent; /* Colore di sfondo durante il lampeggio */
+            }
+            100% {
+                color: white; /* Colore di sfondo finale */
+            }
+        }
+        a.navbar{
+            text-decoration: none;
+        }
+        @keyframes fadeIn /*appare*/{ 
+            from {
+            opacity: 0; /* opacità 0(non si vede) */
+            }
+            to {
+                opacity: 1; /* opacità 1(si vede) */
+            }
+        }
+        @keyframes appearFromLeft {
+            0% {
+                /*margin-left: 20%;*/
+                left: -100px; /* Parte da fuori dalla container a sinistra */
+                opacity: 0; /* Il div è invisibile */
+            }
+            50% {
+                /*margin-left: 40%;*/
+                left: calc(-75% - 80px); /* Si sposta al centro */
+                opacity: 1; /* Il div diventa visibile */
+            }
+            100% {
+                /*margin-left: 60%;*/
+                left: calc(-75% - 80px); /* Rimane al centro */
+                opacity: 1; /* Il div rimane visibile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenitorePrincipale">
+        <div class="conteintore1">
+            <div class="navbar">
+                <div>
+                    <button>
+                        <a class="navbar" style="color: white;" href="index.html">Home </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Il Mercato</h1>
+    <p>
+        Il mercato tramite l'utilizzo dei social o meglio il social media marketing è 
+    quella branca del marketing che si occupa di generare visibilità e interazioni su 
+    social media, comunità virtuali e aggregatori 2.0 per imprese, enti pubblici, 
+    associazioni, personalità.
+    Il Social Media Marketing racchiude una serie di pratiche che vanno dalla gestione
+     dei rapporti online (PR 2.0) all'ottimizzazione delle pagine web fatta per i 
+     social media (SMO, Social Media Optimization). Il termine viene, infatti, 
+     comunemente usato per indicare la gestione della comunicazione integrata su 
+     tutte le diverse piattaforme che il Web 2.0 ha messo e mette continuamente a 
+     disposizione servizi reti sociali, siti condivisione di foto video e diapositive,
+      comunità 2.0, wiki, etc. La caratteristica di queste piattaforme è che la 
+      proprietà delle stesse non è dell'azienda (o persona) che intende instaurare 
+      tali relazioni.
+      Il fine del social media marketing è quello di creare conversazioni con 
+      utenti/consumatori e instaurare quella che viene definita affinità. L'azienda, 
+      attraverso il proprio blog aziendale o social network, è infatti abilitata ad 
+      una relazione 1:1 che avvicina mittente e destinatario.
+      Un esempio comune di social media marketing è l'azione di marketing virale che
+       si compie su YouTube o altri siti di Video sharing. L'azienda, dichiarando o 
+       meno la propria reale identità, pubblica un contenuto interessante e/o di 
+       intrattenimento con l'obiettivo di generare hype e diffusione dello stesso. 
+       Tramite il passaparola spontaneo tra utenti si produce un effetto virale che 
+       porta sempre più persone a visionare il video e, dunque, a far sì che il 
+       messaggio raggiunga più utenti/consumatori possibile.
+       Secondo quanto afferma Lloyd Salmons, primo chairman dell'Internet Advertising
+        Bureau social media council "Il social media marketing non riguarda solo i
+         grandi network come Facebook e MySpace, ma riguarda in generale il fatto che
+          le marche abbiano conversazioni".
+          E' quasi sempre utilizzato dalla <a href="Pubblicità.html">pubblicità</a>
+    </p>
+</body>
+</html>

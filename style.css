@@ -1,0 +1,181 @@
+/*CSS Index*/
+/*Parte sopra*/
+
+.contenitorePrincipale{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    border: 1px none;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+.contenitorePrincipale > div{
+    display: flex;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5%;
+    border: 1px none;
+}
+#divConImmagine {
+  width: 70%;
+  height: 90%;
+  background-image: url('snapedit_1716289134439.jpeg'); /* Specifica il percorso dell'immagine */
+  background-size:contain; /* Imposta la dimensione dell'immagine per coprire tutto il div */
+  background-position:center; /* Imposta la posizione dell'immagine al centro del div */
+  background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
+  border: 1px none black; /* Aggiunge un bordo al div per renderlo visibile */
+}
+.contenitorePrincipale > div > div{
+    display: flex;
+    border: 1px none;
+    width: 40%;
+    height: 10%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0%;
+    margin-left: 70%;
+    position: absolute;
+    left: -50px;
+    opacity: 0;
+    animation: appearFromLeft 4s forwards;
+    animation: fadeIn 5s inherit;
+}
+.navbar > div > button{
+  width: max-content;
+  height: 50%;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+}
+.navbar > div > button > a:hover{
+  /*aggiungere animazione che si alza di poco*/
+  animation: blinkWhite 1.5s infinite;
+  filter: brightness(110%);
+  transform: translateY(-6px);
+}
+.contenitore > div:hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+}
+
+@keyframes blinkWhite {
+  0% {
+      color: white; /* Colore di sfondo iniziale */
+  }
+  50% {
+      color: transparent; /* Colore di sfondo durante il lampeggio */
+  }
+  100% {
+      color: white; /* Colore di sfondo finale */
+  }
+}
+a.navbar{
+  text-decoration: none;
+}
+
+@keyframes fadeIn /*appare*/{ 
+    from {
+      opacity: 0; /* opacità 0(non si vede) */
+    }
+    to {
+        opacity: 1; /* opacità 1(si vede) */
+      }
+}
+@keyframes appearFromLeft {
+  0% {
+    /*margin-left: 20%;*/
+    left: -100px; /* Parte da fuori dalla container a sinistra */
+    opacity: 0; /* Il div è invisibile */
+  }
+  50% {
+      /*margin-left: 40%;*/
+    left: calc(-25% - 80px); /* Si sposta al centro */
+    opacity: 1; /* Il div diventa visibile */
+  }
+  100% {
+      /*margin-left: 60%;*/
+      left: calc(-25% - 80px); /* Rimane al centro */
+      opacity: 1; /* Il div rimane visibile */
+    }
+}
+
+/*Parte sotto*/
+
+body{
+  background-color: var(--site-header-bg, #27282c);
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.contenitoreSecondario{
+  display: flex;
+  border: 1px none;
+  border-color: white;
+  position: absolute;
+  width: 100%;
+  height: 190%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+
+/*bottone backToTop*/
+
+a.backToTop {
+  position: fixed;
+  bottom: 20px; /* Distanza da sotto */
+  right: 20px; /* Distanza da destra */
+  width: 50px; 
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Rende il bottone rotondo */
+  font-size: 24px; /* Dimensione della freccia */
+  text-align: center;
+  cursor: pointer; /* Cambia il cursore */
+  transition: transform 0.3s, opacity 0.3s; /* Aggiungo una transizione alla trasformazione e all'opacità */
+  user-select: none; /* Non fa selezionare il testo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra al bottone */
+  opacity: 0; /* Inizialmente invisibile */
+  pointer-events: none; /* Non fa cliccare il bottone quando è invisibile */
+}
+
+/* Stile per rendere visibile il bottone quando viene scrollata la pagina */
+#showButton:target + .backToTop {
+  opacity: 1; /* Rende il bottone visibile */
+  pointer-events: auto; /* Abilita l'interazione con il bottone */
+}
+
+a.backToTop:hover {
+  transform: scale(1.1); /* Ingrandisce leggermente il bottone */
+}
+
+/* click */
+a.backToTop:active {
+  transform: scale(1); /* Quando viene cliccato torna normale */
+}
+
+.contenitoreSecondario > div > h1:hover{
+  filter: brightness(110%);
+  transform: translateY(-6px);
+}
+.contenitoreSecondario > div > h1:hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Struttura delle altre pagine*/
+        body{
+            background-color: var(--site-header-bg, #27282c);
+        }
+        .contenitorePrincipale{
+            display: flex;
+            width: 100%;
+            height: 20vh;
+            border: 1px none;
+            align-items: center;
+            justify-content: center;
+        }
+        .contenitorePrincipale > div{
+            display: flex;
+            width: 80%;
+            height: 80%;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 5%;
+            border: 1px none;
+        }
+        .contenitorePrincipale > div > div{
+            display: flex;
+            border: 1px none;
+            width: 40%;
+            height: 10%;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 0%;
+            margin-left: 70%;
+            position: absolute;
+            left: -50px;
+            opacity: 0;
+            animation: appearFromLeft 4s forwards;
+            animation: fadeIn 5s inherit;
+        }
+        .navbar > div > button{
+            width: max-content;
+            height: 50%;
+            align-self: center;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar > div > button > a:hover{
+            /*aggiungere animazione che si alza di poco*/
+            animation: blinkWhite 1.5s infinite;
+            filter: brightness(110%);
+            transform: translateY(-6px);
+        }
+        .contenitore > div:hover .shadow {
+            transform: translateY(4px);
+            transition: transform
+                250ms
+                cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        @keyframes blinkWhite {
+            0% {
+                color: white; /* Colore di sfondo iniziale */
+            }
+            50% {
+                color: transparent; /* Colore di sfondo durante il lampeggio */
+            }
+            100% {
+                color: white; /* Colore di sfondo finale */
+            }
+        }
+        a.navbar{
+            text-decoration: none;
+        }
+        @keyframes fadeIn /*appare*/{ 
+            from {
+            opacity: 0; /* opacità 0(non si vede) */
+            }
+            to {
+                opacity: 1; /* opacità 1(si vede) */
+            }
+        }
+        @keyframes appearFromLeft {
+            0% {
+                /*margin-left: 20%;*/
+                left: -100px; /* Parte da fuori dalla container a sinistra */
+                opacity: 0; /* Il div è invisibile */
+            }
+            50% {
+                /*margin-left: 40%;*/
+                left: calc(-75% - 80px); /* Si sposta al centro */
+                opacity: 1; /* Il div diventa visibile */
+            }
+            100% {
+                /*margin-left: 60%;*/
+                left: calc(-75% - 80px); /* Rimane al centro */
+                opacity: 1; /* Il div rimane visibile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenitorePrincipale">
+        <div class="conteintore1">
+            <div class="navbar">
+                <div>
+                    <button>
+                        <a class="navbar" style="color: white;" href="index.html">Home </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Le Fake News</h1>
+    <p>
+        Le fake news - note in italiano come bufale, notizie false, notizie fasulle o 
+    pseudonotizie - sono delle informazioni false o fuorvianti che possono essere 
+    divulgate attraverso qualsiasi media allo scopo di produrre misinformazione o 
+    disinformazione.
+    Esempi di bufale possono essere articoli o pubblicazioni su reti sociali, redatti 
+    con informazioni inventate, ingannevoli o distorte, resi pubblici con il 
+    deliberato intento di disinformare, di creare scandalo attraverso i mezzi di 
+    informazione oppure di attirare clic su Internet.
+    Gli strumenti utili alla diffusione delle pseudonotizie possono essere molteplici.
+     Nelle società dell'informazione sono principalmente veicolate dai mezzi di 
+     comunicazione di massa, ovvero le emittenti televisive e le testate 
+     giornalistiche, tuttavia, con l'avvento di Internet, è aumentata la loro 
+     condivisione per mezzo di media sociali e da parte di attori estranei 
+     all'infosfera, come gli influencer, i personaggi dello spettacolo e persino i 
+     politici.
+     Esistono più tipologie di bufale e diversi possono essere i motivi per i quali 
+     vengono fabbricate e diffuse, tra i quali figurano la guerra dell'informazione 
+     e la propaganda
+    </p>
+</body>
+</html>

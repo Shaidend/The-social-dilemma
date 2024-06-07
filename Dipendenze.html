@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Struttura delle altre pagine*/
+        body{
+            background-color: var(--site-header-bg, #27282c);
+        }
+        .contenitorePrincipale{
+            display: flex;
+            width: 100%;
+            height: 20vh;
+            border: 1px none;
+            align-items: center;
+            justify-content: center;
+        }
+        .contenitorePrincipale > div{
+            display: flex;
+            width: 80%;
+            height: 80%;
+            justify-content: center;
+            align-items: flex-start;
+            margin-left: 5%;
+            border: 1px none;
+        }
+        .contenitorePrincipale > div > div{
+            display: flex;
+            border: 1px none;
+            width: 40%;
+            height: 10%;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 0%;
+            margin-left: 70%;
+            position: absolute;
+            left: -50px;
+            opacity: 0;
+            animation: appearFromLeft 4s forwards;
+            animation: fadeIn 5s inherit;
+        }
+        .navbar > div > button{
+            width: max-content;
+            height: 50%;
+            align-self: center;
+            background-color: transparent;
+            border: none;
+        }
+        .navbar > div > button > a:hover{
+            /*aggiungere animazione che si alza di poco*/
+            animation: blinkWhite 1.5s infinite;
+            filter: brightness(110%);
+            transform: translateY(-6px);
+        }
+        .contenitore > div:hover .shadow {
+            transform: translateY(4px);
+            transition: transform
+                250ms
+                cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        @keyframes blinkWhite {
+            0% {
+                color: white; /* Colore di sfondo iniziale */
+            }
+            50% {
+                color: transparent; /* Colore di sfondo durante il lampeggio */
+            }
+            100% {
+                color: white; /* Colore di sfondo finale */
+            }
+        }
+        a.navbar{
+            text-decoration: none;
+        }
+        @keyframes fadeIn /*appare*/{ 
+            from {
+            opacity: 0; /* opacità 0(non si vede) */
+            }
+            to {
+                opacity: 1; /* opacità 1(si vede) */
+            }
+        }
+        @keyframes appearFromLeft {
+            0% {
+                /*margin-left: 20%;*/
+                left: -100px; /* Parte da fuori dalla container a sinistra */
+                opacity: 0; /* Il div è invisibile */
+            }
+            50% {
+                /*margin-left: 40%;*/
+                left: calc(-75% - 80px); /* Si sposta al centro */
+                opacity: 1; /* Il div diventa visibile */
+            }
+            100% {
+                /*margin-left: 60%;*/
+                left: calc(-75% - 80px); /* Rimane al centro */
+                opacity: 1; /* Il div rimane visibile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenitorePrincipale">
+        <div class="conteintore1">
+            <div class="navbar">
+                <div>
+                    <button>
+                        <a class="navbar" style="color: white;" href="index.html">Home </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Le Dipendenze</h1>
+    <p>
+        La dipendenza da Internet, nota anche come internet dipendenza 
+    (in inglese Internet addiction disorder, in acronimo IAD), è un disturbo da 
+    dipendenza legato a utilizzo intensivo e ossessivo di Internet in tutte le sue 
+    forme, dalla navigazione sui social network, alla visualizzazione di filmati, al 
+    gioco online.
+    Il termine è stato coniato dal medico Ivan Goldberg nel 1995, il quale aveva per 
+    primo diffuso in rete un questionario diagnostico a scopo inizialmente goliardico 
+    e provocatorio. Nonostante l'intenzione puramente ironica del questionario 
+    diagnostico, la sua diffusione ha subito riscontrato forte interesse tra gli 
+    utenti e acceso discussioni tra i clinici, che si sono confrontati nell'avvalorare
+     o nel contestare la teoria dell'esistenza della nuova psicopatologia del 
+     millennio.
+     La "sindrome" di dipendenza dalla rete presenta segni e sintomi paragonabili al 
+     gioco d'azzardo patologico, classificato secondo i criteri diagnostici di 
+     nosografia categoriale del DSM-IV. Nel 2013 è stata inserita nella Sessione III
+      del DSM-5 la proposta di classificazione dell'"Internet Gaming Disorder" tra i 
+      disturbi di Dipendenza Patologica; si tratta di una proposta di nosografia 
+      diagnostica che necessita quindi di ulteriori studi sperimentali prima della sua
+       validazione, e che pertanto non può essere utilizzata a fini legali o 
+       assicurativi. Diversi studiosi affermano tuttavia che la dipendenza da Internet
+        non può essere classificata come uno specifico disturbo psichiatrico, 
+        ma deve piuttosto essere considerata come un sintomo psicologico che può 
+        manifestarsi nell'ambito di differenti quadri psicopatologici.
+    </p>
+</body>
+</html>
